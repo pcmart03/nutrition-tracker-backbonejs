@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Tracker</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <section>
+    <header class="header">
+      <h1>Nutrition Tracker</h1>
+    </header>
+    
+  <div class="flex-container" id="nutrition-app">    
+   
+   <!--
+    <div class="food-diary">
+      <table class="food-diary-table">
+        <thead>
+          <th class="food">Food</th>
+          <th class="quantity">Quantity</th>
+          <th class="calories">Calories</th>
+        </thead>
+      </table>
+    </div>
+    -->
+  </div> 
+  </section>
+  
+  <script type="text/template" id="main-view">
+      <div>
+        <p><a href="#search">Food Search</a></p>
+      </div>
+  </script>
+
+  <script type="text/template" id="search-view">
+    <div class="search-area">
+      <input type="text" id="search-box" class="search-box" placeholder="Enter search term">
+      <div class="search-result" id="search-results">
+        <ul id="results-list"></ul>
+      </div>
+    </div> 
+  </script>  
+  
+  <script type="text\template" id="result-template">
+    <a class='no-underline' href='#food/:<%= item_id %>'>
+      <strong><%= item_name %></strong>, <%= brand_name %>
+    </a>
+  </script>
+
+
+  <script src="js/lib/jquery-1.12.0.min.js"></script>
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/lib/backbone.js"></script>
+  <script src="js/lib/backbone.localStorage-min.js"></script>
+  <script src="js/models/foodModel.js"></script>
+  <script src="js/collections/foods.js"></script>
+  <script src="js/views/foodViews.js"></script>
+  <script src="js/views/app.js"></script>
+  <script src="js/routers/routes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
