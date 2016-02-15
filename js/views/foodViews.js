@@ -8,10 +8,18 @@ app.ResultView = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(this.model.attributes));
         return this;
-    },
-
-    selectFood: function(){
-        alert("Food Clicked");
     }
 
-})
+});
+
+app.AddFoodView = Backbone.View.extend({
+    el: "#nutrition-app",
+
+    template: _.template($('#add-food-template').html()),
+    
+    tagName: "div",
+    render: function(){
+        this.$el.html(this.template(this.model.attributes));
+        return this;
+    }
+});

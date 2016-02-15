@@ -13,12 +13,12 @@ body {
     text-align: center;
 }
 
-.flex-container {
+/*.flex-container {
     display: flex;
     flex-wrap: wrap;
     width: 900px;
     margin: 20px auto;
-}
+} */
 
 .search-area {
     //width: 450px;
