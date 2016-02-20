@@ -38,23 +38,16 @@ app.AddFoodView = Backbone.View.extend({
 
     newAttributes: function(){
         return {
-            "order": app.savedFoods.nextOrder() || 1,
-            "fields": {
-                "item_id": this.model.attributes.item_id,
-                "item_name": this.model.attributes.item_name,
-                "brand_name": this.model.attributes.brand_name,
-                "nf_calories": this.model.attributes.nf_calories,
-                "nf_serving_size_unit": this.model.attributes.nf_serving_size_unit,
-                "nf_serving_size_qty": this.model.attributes.nf_serving_size_qty,
-                "serving_eaten": $('#serving_input').val().trim(),
-                "calories_eaten": $('#calories_eaten').html(),
+                name: this.model.get('item_name'),
+                calories: $('#calories_eaten').html(),
                 }
-            }; 
     },
 
     saveFood: function(event){
         var servings = $('#serving_input').val().trim();
-        app.savedFoods.create(this.newAttributes());
+        newFood = this.newAttributes();
+        console.log(newFood)
+        app.savedFoods.create(newFood);
         app.foodrouter.navigate("", { trigger: true})
     }
 });
@@ -62,6 +55,9 @@ app.AddFoodView = Backbone.View.extend({
 app.SavedFoodView = Backbone.View.extend({
     template: _.template($('#food-row').html()),
     tagName: 'tr',
+      initialize: function() {
+    this.listenTo(this.model, "change", this.render);
+  },
     render: function(){
         this.$el.append(this.template(this.model.attributes));
         return this;

@@ -32,9 +32,9 @@
   </script>
 
   <script type="text/template" id="food-row">
-      <td><%= item_name %></td>
-      <td><%= nf_serving_size_qty %></td>
-      <td><%= calories_eaten %></td>
+      <td><%= name %></td>
+      <td></td>
+      <td><%= calories %></td>
   </script>
 
   <script type="text/template" id="search-view">
@@ -65,7 +65,12 @@
   <script src="js/lib/jquery-1.12.0.min.js"></script>
   <script src="js/lib/underscore.js"></script>
   <script src="js/lib/backbone.js"></script>
-  <script src="js/lib/backbone.localStorage-min.js"></script>
+  <!-- <script src="js/lib/backbone.localStorage-min.js"></script> -->
+  
+  <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+<!-- BackboneFire -->
+<script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
+
   <script src="js/models/foodModel.js"></script>
   <script src="js/collections/foods.js"></script>
   <script src="js/collections/savedFoods.js"></script>

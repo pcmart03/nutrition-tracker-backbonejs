@@ -19,4 +19,11 @@ app.FoodItem = Backbone.Model.extend({
         return response.fields;
     },
 
+});
+
+app.SavedItem = Backbone.Model.extend({
+    defaults: {
+        name: "item name",
+        calories: 0
+    }
 })
