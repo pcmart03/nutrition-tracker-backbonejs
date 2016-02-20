@@ -10,20 +10,13 @@ app.FoodItem = Backbone.Model.extend({
         nf_serving_size_unit: "serving",
         nf_serving_size_qty: 0,
         serving_eaten: 1,
-        calories_eaten: 0,
-        saved: false
+        calories_eaten: 0
     },
 
     idAttribute: "item_id",
 
     parse: function(response){
-        console.log(response.fields)
         return response.fields;
     },
 
-    toggle: function(){
-        this.save({
-            saved: !this.get(saved)
-        });
-    }
 })

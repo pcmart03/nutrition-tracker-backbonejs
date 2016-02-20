@@ -21,7 +21,7 @@
         <p><a href="#search">Food Search</a></p>
       </div>
     <div class="food-diary">
-      <table class="food-diary-table">
+      <table id="food-diary-table">
         <thead>
           <th class="food">Food</th>
           <th class="quantity">Quantity</th>
@@ -32,11 +32,9 @@
   </script>
 
   <script type="text/template" id="food-row">
-    <tr>
-      <td><%= food_name %></td>
+      <td><%= item_name %></td>
       <td><%= nf_serving_size_qty %></td>
-      <td><%= nf_calories %></td>
-    </tr>
+      <td><%= calories_eaten %></td>
   </script>
 
   <script type="text/template" id="search-view">
@@ -55,11 +53,11 @@
   </script>
 
   <script type="text\template" id="add-food-template">
-    <h1><%= item_name %></h1>
-    <p><%= brand_name %></p>
-    <p>Calories per <%= nf_serving_size_qty %> <%= nf_serving_size_unit %>: <%= nf_calories%></p>
+    <h1 id="item_name"><%= item_name %></h1>
+    <p id="brand_name"><%= brand_name %></p>
+    <p>Calories per <span id="nf_serving_size_qty"><%= nf_serving_size_qty %></span> <span id="nf_serving_size_unit"><%= nf_serving_size_unit %></span>: <span id="nf_calories"><%= nf_calories%></span></p>
     <p> Servings: <input type="text" id='serving_input' value="<%= serving_eaten %>"></p>
-    <p>Total calories: <%= calories_eaten %></p>
+    <p>Total calories: <span id="calories_eaten"><%= calories_eaten %></span> <button id="update">update</button></p>
     <button id="save-button">Save</button>
   </script>
 
@@ -70,6 +68,7 @@
   <script src="js/lib/backbone.localStorage-min.js"></script>
   <script src="js/models/foodModel.js"></script>
   <script src="js/collections/foods.js"></script>
+  <script src="js/collections/savedFoods.js"></script>
   <script src="js/views/foodViews.js"></script>
   <script src="js/views/search-view.js"></script>
   <script src="js/views/app.js"></script>

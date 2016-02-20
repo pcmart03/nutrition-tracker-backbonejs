@@ -42,8 +42,6 @@ app.SearchView = Backbone.View.extend({
 
     addOne: function(food) {
         var foodObj = food;
-        foodObj.attributes.calories_eaten = foodObj.attributes.nf_calories * foodObj.attributes.serving_eaten;
-        console.log(foodObj);
         var view = new app.ResultView({model: foodObj});
         $('#results-list').append(view.render().el);
     },

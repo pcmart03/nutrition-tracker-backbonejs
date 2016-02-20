@@ -3,7 +3,7 @@ var app = app || {};
 var SavedFoods = Backbone.Collection.extend({
     model: app.FoodItem,
 
-    localStorage: new Backbone.localStorage,
+    localStorage: new Backbone.LocalStorage('savedFoods-backbone'),
 
         // We keep the Saved foods in sequential order, despite being saved by unordered
     // GUID in the database. This generated the next order number for new items.
@@ -15,10 +15,10 @@ var SavedFoods = Backbone.Collection.extend({
     },
 
     // Todos are sortered by their original insertion order.
-    comparator: function(todo){
-        return todo.get('order');
+    comparator: function(food){
+        return food.get('order');
     }
 
 });
 
-app.savedFoods = new SavdFoods();
+app.savedFoods = new SavedFoods();
