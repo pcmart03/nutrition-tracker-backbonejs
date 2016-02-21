@@ -1,0 +1,1 @@
+This is a breakable toy I built to practice working with Backbone. It can search the nutrionix API and save foods to a firebase database. 
